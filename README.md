@@ -1,4 +1,6 @@
-![Banner](./docs/images/banner.png)
+<!-- ![Banner](./docs/images/banner.png) -->
+
+![AWS EKS Retail Store Diagram](./docs/images/aws%20eks%20retail%20store.png)
 
 <div align="center">
   <div align="center">
