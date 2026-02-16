@@ -1,30 +1,26 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "vpc" {
-  source  = "./vpc/main.tf"
+  source  = "./vpc"
   project = var.project
 }
 
 module "eks" {
-  source   = "./eks/main.tf"
-  vpc_id   = module.vpc.vpc_id
+  source   = "./eks"
+  cluster_name = "project-bedrock-cluster"
   subnets  = module.vpc.public_subnets
   project  = var.project
 }
 
 module "iam" {
-  source = "./iam/dev-view-user.tf"
+  source = "./iam"
 }
 
 module "logging" {
-  source       = "./logging/cloudwatch.tf"
-  cluster_name = module.eks.cluster_name
+  source       = "./logging"
+ cluster_name = module.eks.cluster_name
 }
 
 module "s3_lambda" {
-  source     = "./s3-lambda/main.tf"
+  source     = "./s3-lambda"
   student_id = var.student_id
   project    = var.project
 }
