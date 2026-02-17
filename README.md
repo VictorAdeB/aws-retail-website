@@ -8,42 +8,40 @@
   <h2>Repository Structure of folder that have undergone changes</h2>
   </strong>
 
-  aws-retail-website/
+aws-retail-website/
+├─ terraform/
+│  └─ project-bedrock/
+│     ├─ main.tf
+│     ├─ variables.tf
+│     ├─ outputs.tf
+│     ├─ terraform.tfvars
+│     ├─ backend.tf
+│     ├─ grading.json
+│     │
+│     ├─ vpc/
+│     ├─ eks/
+│     ├─ iam/
+│     ├─ logging/
+│     └─ s3-lambda/
 │
-├── terraform/project-bedrock/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── terraform.tfvars
-│   ├── backend.tf
-│   ├── grading.json
-│   │
-│   ├── vpc/
-│   ├── eks/
-│   ├── iam/
-│   ├── logging/
-│   └── s3-lambda/
-│ 
+├─ src/
+│  └─ app/
+│     ├─ chart/                  # Helm chart
+│     │  ├─ Chart.yaml
+│     │  └─ values.yaml
+│     ├─ cart/
+│     ├─ catalog/
+│     ├─ checkout/
+│     ├─ e2e/
+│     ├─ load-generator/
+│     ├─ misc/
+│     ├─ orders/
+│     └─ ui/
 │
-├── src/
-│   └── app/chart/ (Helm Configuration can be found here)
-│       ├── Chart.yaml  
-│       ├── values.yaml
-│   └── app/cart/  
-│   └── app/catlog/  
-│   └── app/checkout/  
-│   └── app/e2e/  
-│   └── app/load-generator/  
-│   └── app/misc/  
-│   └── app/orders/  
-│   └── app/ui/  
-│ 
-│
-├── .github/workflows
-│   └── terraform.yml
-│ 
-├── README.md
-
+└─ .github/
+└─ workflows/
+└─ terraform.yml
+README.md
 
 ### Terraform
 Infrastructure Provisioning
